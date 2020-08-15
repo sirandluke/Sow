@@ -10,11 +10,17 @@ import UIKit
 import CLTypingLabel
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var titleLabel: CLTypingLabel!
+    
+    @IBOutlet weak var startButton: UIButton!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = "Study Buddy"
+        titleLabel.text = K.app_name
+    }
+    
+    @IBAction func startPressed(_ sender: UIButton) {
     }
 }
 

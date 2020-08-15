@@ -6,8 +6,6 @@
 //  Copyright © 2020 Luke Sirand. All rights reserved.
 //
 
-import Foundation
-
 struct K {
-    let app_name = "StudyBuddy"
+    static let app_name = "StudyBuddy"
 }
