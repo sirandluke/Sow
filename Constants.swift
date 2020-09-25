@@ -7,7 +7,7 @@
 //
 
 struct K {
-    static let app_name = "StudyBuddy"
+    static let app_name = "Study Buddy📖"
     
     struct Phrases {
         static let s = [
