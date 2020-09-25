@@ -23,7 +23,7 @@ class TimerViewController: UIViewController {
     
     var tm = TimerMethods()
     
-    var player: AVAudioPlayer?
+    var player: AVAudioPlayer!
     
     // Declare timer
     var timer = Timer()
@@ -44,12 +44,14 @@ class TimerViewController: UIViewController {
    //MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //tm.setClock(studyTimer!, breakTimer!, false)
+        buttonLabel.makeCircular()
         if debug {
+            tm.setClock(1, 1, false)
             print("Study time: \(String(describing: studyTimer))")
             print("Break time: \(String(describing: breakTimer))")
         }
-        tm.setClock(studyTimer!, breakTimer!, false)
-        buttonLabel.makeCircular()
         startTime()
     }
     
@@ -74,28 +76,30 @@ class TimerViewController: UIViewController {
     
     // Update the countdown timer or switch timers.
     @objc func updateTimer() {
-        if secondsPassed < totalTime {
+        if secondsPassed < totalTime * 60 {
             secondsPassed += 1
             progressBar.progress = tm.progressBar(secondsPassed)
             timeLabel.text = tm.getTime(secondsPassed)
             if debug {
-                print(tm.progressBar(secondsPassed))
+                print(tm.progressBar((secondsPassed)))
             }
         }
         else {
-            timer.invalidate()
             if (tm.c?.status)! {  // Gets audio sample.
                 // TODO: Text Message Notify User
-                let url = Bundle.main.url(forResource: "notification_1", withExtension: "wav")
+                let url = Bundle.main.url(forResource: K.S.n1_2, withExtension: K.S.ext)
                 player = try! AVAudioPlayer(contentsOf: url!)
             }
             else {
-                let url = Bundle.main.url(forResource: "notification_2", withExtension: "wav")
+                let url = Bundle.main.url(forResource: K.S.n1_1, withExtension: K.S.ext)
                 player = try! AVAudioPlayer(contentsOf: url!)
             }
             player!.play()
             reset()
-            tm.changeStatus()
+            rUI()
+            
+
+
         }
     }
     
@@ -103,8 +107,13 @@ class TimerViewController: UIViewController {
     func reset() {
         progressBar.progress = 1.0
         secondsPassed = 0
-        activityLabel.text = tm.getPhrase()
         totalTime = tm.reset()
+    }
+    
+    // Updates UI
+    func rUI() {
+        tm.changeStatus()
+        activityLabel.text = tm.getPhrase()
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {

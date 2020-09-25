@@ -37,8 +37,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xm6-U0-scY" userLabel="Study Time" customClass="CountableLabel" customModule="CountableLabel">
-                                                <rect key="frame" x="265.66666666666669" y="0.0" width="69.333333333333314" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xm6-U0-scY" userLabel="Study Time" customClass="CountableLabel" customModule="CountableLabel">
+                                                <rect key="frame" x="262.33333333333331" y="0.0" width="72.666666666666686" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -68,8 +68,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="00 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6J-2x-Eyi" userLabel="Break Time" customClass="CountableLabel" customModule="CountableLabel">
-                                                <rect key="frame" x="262" y="0.0" width="73" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="10 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6J-2x-Eyi" userLabel="Break Time" customClass="CountableLabel" customModule="CountableLabel">
+                                                <rect key="frame" x="265.66666666666669" y="0.0" width="69.333333333333314" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -184,7 +184,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="rWH-qh-XgR">
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rWH-qh-XgR">
                                                 <rect key="frame" x="0.0" y="159.33333333333337" width="251" height="1.6666666666666572"/>
                                                 <color key="tintColor" red="0.0" green="1" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </progressView>
@@ -194,7 +194,9 @@
                                             <constraint firstAttribute="height" constant="161" id="67Q-QV-9RY"/>
                                             <constraint firstItem="x4r-ux-6dt" firstAttribute="leading" secondItem="P7T-Ai-3X5" secondAttribute="leading" constant="36.5" id="9HT-7d-oBM"/>
                                             <constraint firstAttribute="bottom" secondItem="rWH-qh-XgR" secondAttribute="bottom" id="NOL-sZ-AiQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="rWH-qh-XgR" secondAttribute="trailing" id="hSF-AM-XWw"/>
                                             <constraint firstAttribute="trailing" secondItem="x4r-ux-6dt" secondAttribute="trailing" constant="36.5" id="uvG-7c-Z3g"/>
+                                            <constraint firstItem="rWH-qh-XgR" firstAttribute="leading" secondItem="P7T-Ai-3X5" secondAttribute="leading" id="v6z-hN-Rtw"/>
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKZ-ww-N98">

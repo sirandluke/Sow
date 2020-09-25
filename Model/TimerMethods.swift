@@ -20,11 +20,11 @@ struct TimerMethods {
     
     func progressBar(_ secondsPassed: Int) -> Float {
         if c!.status {
-            return 1.0 - Float(secondsPassed) / Float(c!.b)
+            return 1.0 - Float(secondsPassed) / Float(c!.b * 60)
 
         }
         else {
-            return 1.0 - Float(secondsPassed) / Float(c!.s)
+            return 1.0 - Float(secondsPassed) / Float(c!.s * 60)
         }
     }
     
@@ -76,8 +76,8 @@ struct TimerMethods {
     // Picks a random phrase to be displayed
     func getPhrase() -> String {
         if c!.status {
-             return K.Phrases.b[Int.random(in: 0..<K.Phrases.b.count)]
+            return K.P.b[Int.random(in: 0..<K.P.b.count)]
         }
-        return K.Phrases.s[Int.random(in: 0..<K.Phrases.s.count)]
+        return K.P.s[Int.random(in: 0..<K.P.s.count)]
     }
 }
