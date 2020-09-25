@@ -10,6 +10,8 @@ import UIKit
 
 struct TimerMethods {
     
+    let debug = false
+    
     var c: Clock?
     
     mutating func setClock (_ s: Int, _ b: Int, _ status: Bool) {
@@ -33,7 +35,7 @@ struct TimerMethods {
             t = c!.b
         }
         
-        let newT = t - secondsPassed
+        let newT = (t * 60) - secondsPassed
         let m = (newT / 60 )
         let s = (newT % 60)
         var mStr = String(m)
@@ -44,6 +46,16 @@ struct TimerMethods {
         if s < 10 {
             sStr = "0\(s)"
         }
+        if debug {
+            if debug {
+                print("The status is: \(c!.status)")
+                print("Seconds passed is: \(secondsPassed)")
+                print("Total time is: \(t)")
+                print("m: \(m), s: \(s)")
+                print("\(mStr):\(sStr)")
+            }
+        }
+        
         return "\(mStr):\(sStr)"
     }
     
@@ -51,6 +63,14 @@ struct TimerMethods {
     mutating func changeStatus() {
         if c!.status { c!.status = false }
         else { c!.status = true }
+    }
+    
+    mutating func reset() -> Int {
+        var totalTime = c!.s
+        if c!.status {
+             totalTime = c!.b
+        }
+        return totalTime
     }
     
     // Picks a random phrase to be displayed

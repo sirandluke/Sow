@@ -14,6 +14,7 @@
 import UIKit
 import AVFoundation
 import CLTypingLabel
+import CountableLabel
 
 class TimerViewController: UIViewController {
 
@@ -35,7 +36,7 @@ class TimerViewController: UIViewController {
     
     // TODO: create action and outlets for timers and labels
     @IBOutlet weak var activityLabel: CLTypingLabel!
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var timeLabel: CountableLabel!
     @IBOutlet weak var buttonLabel: UIButton!
     
     @IBOutlet weak var progressBar: UIProgressView!
@@ -43,9 +44,18 @@ class TimerViewController: UIViewController {
    //MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        if debug {
+            print("Study time: \(String(describing: studyTimer))")
+            print("Break time: \(String(describing: breakTimer))")
+        }
         tm.setClock(studyTimer!, breakTimer!, false)
         buttonLabel.makeCircular()
         startTime()
+    }
+    
+    // For when user swipes out of view.
+    override func viewWillDisappear(_ animated: Bool) {
+        timer.invalidate()
     }
     
     @objc func startTime() {
@@ -89,22 +99,19 @@ class TimerViewController: UIViewController {
         }
     }
     
-    // End Timer and return to StartVC
-    @IBAction func backButton(_ sender: UIButton) {
-        timer.invalidate()
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     // Reset timer.
     func reset() {
         progressBar.progress = 1.0
         secondsPassed = 0
         activityLabel.text = tm.getPhrase()
-        if tm.c!.status {
-            totalTime = tm.c!.b * 60
+        totalTime = tm.reset()
+    }
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        if debug {
+            print("Back button pressed.")
         }
-        else {
-            totalTime = tm.c!.s * 60
-        }
+        timer.invalidate()
+        self.dismiss(animated: true, completion: nil)
     }
 }

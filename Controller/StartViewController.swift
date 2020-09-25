@@ -8,6 +8,7 @@
 
 import UIKit
 import CLTypingLabel
+import CountableLabel
 
 class StartViewController: UIViewController {
 
@@ -21,8 +22,10 @@ class StartViewController: UIViewController {
     @IBOutlet weak var titleLabel: CLTypingLabel!
     
     // Changes Label to reflect slider movement.
-    @IBOutlet weak var studyLabel: UILabel!
-    @IBOutlet weak var breakLabel: UILabel!
+    @IBOutlet weak var studyLabel: CountableLabel!
+    @IBOutlet weak var sLeft: CountableLabel!
+    @IBOutlet weak var breakLabel: CountableLabel!
+    @IBOutlet weak var bLeft: CountableLabel!
     
     
     // Access slider bar fields.
@@ -38,6 +41,8 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         titleLabel.text = K.app_name
         startButton.makeCircular()
+        sLeft.text = "Study Time"
+        bLeft.text = "Break Time"
         studySlider.value = Float(sm.getStudyTime())
         studyLabel.text = "\(sm.getBreakTime()) min"
         breakSlider.value = Float(sm.getBreakTime())
@@ -79,6 +84,7 @@ class StartViewController: UIViewController {
 }
 
 //MARK: - Extensions
+
 extension UIButton {
     func makeCircular() {
         self.clipsToBounds = true

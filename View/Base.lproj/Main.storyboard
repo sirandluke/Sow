@@ -31,13 +31,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="pc0-rx-MHm">
                                         <rect key="frame" x="0.0" y="335" width="335" height="21"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Study Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YR-xl-Uaa" userLabel="Study Label">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Study Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YR-xl-Uaa" userLabel="Study Label" customClass="CountableLabel" customModule="CountableLabel">
                                                 <rect key="frame" x="0.0" y="0.0" width="118" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xm6-U0-scY" userLabel="Study Time">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xm6-U0-scY" userLabel="Study Time" customClass="CountableLabel" customModule="CountableLabel">
                                                 <rect key="frame" x="265.66666666666669" y="0.0" width="69.333333333333314" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <nil key="textColor"/>
@@ -62,13 +62,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="qby-ZW-o9v">
                                         <rect key="frame" x="0.0" y="484" width="335" height="21"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBc-lU-RwS" userLabel="Break Label">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBc-lU-RwS" userLabel="Break Label" customClass="CountableLabel" customModule="CountableLabel">
                                                 <rect key="frame" x="0.0" y="0.0" width="116.33333333333333" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="00 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6J-2x-Eyi" userLabel="Break Time">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="00 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6J-2x-Eyi" userLabel="Break Time" customClass="CountableLabel" customModule="CountableLabel">
                                                 <rect key="frame" x="262" y="0.0" width="73" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <nil key="textColor"/>
@@ -106,7 +106,7 @@
                                                     <color key="titleShadowColor" red="0.30943059919999999" green="0.96704179050000005" blue="0.7000668645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="startPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZZp-cC-eUc"/>
+                                                    <action selector="startPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p0J-sr-UMy"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -134,13 +134,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bLeft" destination="yBc-lU-RwS" id="NFP-Ti-8bH"/>
                         <outlet property="breakLabel" destination="N6J-2x-Eyi" id="SC1-zE-2Ms"/>
                         <outlet property="breakSlider" destination="pyq-Cz-Yq6" id="4KW-Ch-oF5"/>
+                        <outlet property="sLeft" destination="7YR-xl-Uaa" id="Tth-zZ-iko"/>
                         <outlet property="startButton" destination="60d-Gf-e5i" id="7EK-wj-V8x"/>
                         <outlet property="studyLabel" destination="xm6-U0-scY" id="jgx-mj-Ne1"/>
                         <outlet property="studySlider" destination="ggn-vy-BbZ" id="Y8C-bv-cb8"/>
                         <outlet property="titleLabel" destination="J4e-Q3-Ug6" id="hPr-In-YKN"/>
-                        <segue destination="IJK-op-4DX" kind="presentation" identifier="goToTimer" id="Jto-o6-VTZ"/>
+                        <segue destination="IJK-op-4DX" kind="showDetail" identifier="goToTimer" id="Jto-o6-VTZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -161,14 +163,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="81" translatesAutoresizingMaskIntoConstraints="NO" id="G75-Hm-JXT">
                                 <rect key="frame" x="20" y="0.0" width="335" height="724"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Study Time!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2v-1v-hcd" customClass="CLTypingLabel" customModule="CLTypingLabel">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="301"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Study Time!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2v-1v-hcd" customClass="CLTypingLabel" customModule="CLTypingLabel">
+                                        <rect key="frame" x="167.66666666666666" y="0.0" width="0.0" height="301"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="P7T-Ai-3X5">
-                                        <rect key="frame" x="42.000000000000014" y="382" width="251.33333333333337" height="161"/>
+                                        <rect key="frame" x="42" y="382" width="251" height="161"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmd-dq-vPh">
                                                 <rect key="frame" x="0.3333333333333286" y="0.0" width="250.33333333333337" height="41.666666666666664"/>
@@ -176,8 +178,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MM:SS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4r-ux-6dt" userLabel="MMSS">
-                                                <rect key="frame" x="36.333333333333329" y="66.666666666666686" width="178.33333333333337" height="67.666666666666686"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4r-ux-6dt" userLabel="MMSS" customClass="CountableLabel" customModule="CountableLabel">
+                                                <rect key="frame" x="36.666666666666671" y="66.666666666666686" width="178" height="67.666666666666686"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="57"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -209,13 +211,8 @@
                                                 <state key="normal" title="Go Back">
                                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="backButton:" destination="IJK-op-4DX" eventType="touchUpInside" id="MMH-3q-qi3"/>
+                                                    <action selector="backButtonPressed:" destination="IJK-op-4DX" eventType="touchUpInside" id="CKd-dv-2qR"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -244,11 +241,9 @@
                     </view>
                     <connections>
                         <outlet property="activityLabel" destination="i2v-1v-hcd" id="YLx-n0-ZMO"/>
-                        <outlet property="activityLavel" destination="i2v-1v-hcd" id="rrT-QG-SqJ"/>
                         <outlet property="buttonLabel" destination="abh-my-PJO" id="4yb-7q-wwa"/>
                         <outlet property="progressBar" destination="rWH-qh-XgR" id="d5y-8G-b5v"/>
-                        <outlet property="seperatorLabel" destination="x4r-ux-6dt" id="dM2-jS-06W"/>
-                        <outlet property="timeLabel" destination="x4r-ux-6dt" id="wKU-GQ-H4Z"/>
+                        <outlet property="timeLabel" destination="x4r-ux-6dt" id="D40-Ac-zuH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAD-5b-k5U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
