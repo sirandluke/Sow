@@ -40,6 +40,7 @@ class TimerViewController: UIViewController {
     // TODO: create action and outlets for timers and labels
     @IBOutlet weak var activityLabel: CLTypingLabel!
     @IBOutlet weak var timeLabel: CountableLabel!
+    @IBOutlet weak var pauseStartLabel: UIButton!
     
     @IBOutlet weak var progressBar: UIProgressView!
     
