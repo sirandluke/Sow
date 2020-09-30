@@ -46,7 +46,9 @@ class TimerViewController: UIViewController {
         pauseStartLabel.titleLabel?.text = K.p
         pauseStartLabel.makeCircular()
         if debug {
-            tm.setClock(studyTimer!, breakTimer!, isPaused)
+            //tm.setClock(studyTimer!, breakTimer!, isPaused)
+            tm.setClock(1, 1, isPaused)
+
             print("Study time: \(String(describing: studyTimer))")
             print("Break time: \(String(describing: breakTimer))")
         }

@@ -20,11 +20,11 @@ class StartViewController: UIViewController {
 
     let debug = true
     
+    var player: AVAudioPlayer!
+
     var sm = StartMethods()
     
-    
-    /// Types "Study Buddy" on launch.
-    @IBOutlet weak var titleLabel: CountableLabel!
+    @IBOutlet weak var titleLabel: CLTypingLabel!
     
     /// Changes Label to reflect slider movement.
     @IBOutlet weak var studyLabel: CountableLabel!
@@ -54,22 +54,27 @@ class StartViewController: UIViewController {
         studyLabel.text = "\(sm.getBreakTime()) min"
         breakSlider.value = Float(sm.getBreakTime())
         breakLabel.text = "\(sm.getBreakTime()) min"
+        
+        /// Play App Launch Sound
+        let url = Bundle.main.url(forResource: K.S.s, withExtension: K.S.ext)
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
     }
     
-    // Updates the study slider.
+    /// Updates the study slider.
     @IBAction func studySliderChange(_ sender: UISlider) {
         let time = String(Int(sender.value))
         
         studyLabel.text = "\(time) min"
     }
     
-    // Updates the break slider.
+    /// Updates the break slider.
     @IBAction func breakSliderChange(_ sender: UISlider) {
         let time = String(Int(sender.value))
         breakLabel.text = "\(time) min"
     }
     
-    // Gets values for timers and performs Segue
+    /// Gets values for timers and performs Segue
     @IBAction func startPressed(_ sender: UIButton) {
         let studyTime = Int(studySlider.value)
         let breakTime = Int(breakSlider.value)
@@ -80,7 +85,7 @@ class StartViewController: UIViewController {
     
     //MARK: - Segue Sequence
     
-    // Perform segue and prepare new VC.
+    /// Perform segue and prepare new VC.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToTimer" {
             let destinationVC = segue.destination as! TimerViewController  // Changes the screen
