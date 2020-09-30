@@ -13,6 +13,7 @@
 
 import UIKit
 import AVFoundation
+import UserNotifications
 import CLTypingLabel
 import CountableLabel
 
@@ -20,6 +21,7 @@ class TimerViewController: UIViewController {
 
     //MARK: - Declerations
     let debug = true
+    
     
     var tm = TimerMethods()
     
@@ -29,6 +31,7 @@ class TimerViewController: UIViewController {
     var timer = Timer()
     var totalTime = 0
     var secondsPassed = 0
+    var isPaused = false
     
     // Stores the study and break times user specified
     var studyTimer: Int?
@@ -37,7 +40,6 @@ class TimerViewController: UIViewController {
     // TODO: create action and outlets for timers and labels
     @IBOutlet weak var activityLabel: CLTypingLabel!
     @IBOutlet weak var timeLabel: CountableLabel!
-    @IBOutlet weak var buttonLabel: UIButton!
     
     @IBOutlet weak var progressBar: UIProgressView!
     
@@ -45,19 +47,22 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //tm.setClock(studyTimer!, breakTimer!, false)
-        buttonLabel.makeCircular()
+        pauseStartLabel.titleLabel?.text = K.p
+        pauseStartLabel.makeCircular()
         if debug {
             tm.setClock(1, 1, false)
             print("Study time: \(String(describing: studyTimer))")
             print("Break time: \(String(describing: breakTimer))")
         }
+        
         startTime()
     }
     
     // For when user swipes out of view.
-    override func viewWillDisappear(_ animated: Bool) {
-        timer.invalidate()
+    override func viewDidDisappear(_ animated: Bool) {
+        if !(isPaused) {
+            timer.invalidate()
+        }
     }
     
     @objc func startTime() {
@@ -85,21 +90,21 @@ class TimerViewController: UIViewController {
             }
         }
         else {
-            if (tm.c?.status)! {  // Gets audio sample.
+            // Gets audio sample.
+            if (tm.c?.status)! {  // Switching from break to study
                 // TODO: Text Message Notify User
                 let url = Bundle.main.url(forResource: K.S.n1_2, withExtension: K.S.ext)
                 player = try! AVAudioPlayer(contentsOf: url!)
+                studyNotif()
             }
-            else {
+            else { // Switching from study to break
                 let url = Bundle.main.url(forResource: K.S.n1_1, withExtension: K.S.ext)
                 player = try! AVAudioPlayer(contentsOf: url!)
+                breakNotif()
             }
             player!.play()
             reset()
             rUI()
-            
-
-
         }
     }
     
@@ -115,12 +120,21 @@ class TimerViewController: UIViewController {
         tm.changeStatus()
         activityLabel.text = tm.getPhrase()
     }
-    
-    @IBAction func backButtonPressed(_ sender: UIButton) {
+   
+    @IBAction func pauseStartPressed(_ sender: UIButton) {
         if debug {
-            print("Back button pressed.")
+            print("Button Pressed")
         }
-        timer.invalidate()
-        self.dismiss(animated: true, completion: nil)
+        if isPaused {
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+            isPaused = false
+            pauseStartLabel.titleLabel?.text = K.p
+        }
+        else {
+            timer.invalidate()
+            isPaused = true
+            pauseStartLabel.titleLabel?.text = K.s
+        }
     }
+    
 }

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  StudyBuddy
+//  Sow
 //
 //  Created by Luke Sirand on 8/7/20.
 //  Copyright © 2020 Luke Sirand. All rights reserved.
@@ -10,11 +10,16 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    
+    func registerForPushNotifications(){
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            print(granted)
+        }
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        registerForPushNotifications()
         return true
     }
 

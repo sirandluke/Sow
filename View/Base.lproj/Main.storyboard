@@ -11,7 +11,7 @@
         <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StartViewController" customModule="StudyBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StartViewController" customModule="Sow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Study Buddy📖" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4e-Q3-Ug6" userLabel="Title Label" customClass="CLTypingLabel" customModule="CLTypingLabel">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="301"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -32,14 +32,14 @@
                                         <rect key="frame" x="0.0" y="335" width="335" height="21"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Study Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YR-xl-Uaa" userLabel="Study Label" customClass="CountableLabel" customModule="CountableLabel">
-                                                <rect key="frame" x="0.0" y="0.0" width="118" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="21"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xm6-U0-scY" userLabel="Study Time" customClass="CountableLabel" customModule="CountableLabel">
-                                                <rect key="frame" x="262.33333333333331" y="0.0" width="72.666666666666686" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <rect key="frame" x="281.66666666666669" y="0.0" width="53.333333333333314" height="21"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -63,14 +63,14 @@
                                         <rect key="frame" x="0.0" y="484" width="335" height="21"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBc-lU-RwS" userLabel="Break Label" customClass="CountableLabel" customModule="CountableLabel">
-                                                <rect key="frame" x="0.0" y="0.0" width="116.33333333333333" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="85.333333333333329" height="21"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="10 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6J-2x-Eyi" userLabel="Break Time" customClass="CountableLabel" customModule="CountableLabel">
-                                                <rect key="frame" x="265.66666666666669" y="0.0" width="69.333333333333314" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <rect key="frame" x="282.66666666666669" y="0.0" width="52.333333333333314" height="21"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -100,7 +100,7 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="dRv-El-dEy"/>
                                                     <constraint firstAttribute="height" constant="100" id="gui-4T-OD5"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
                                                 <state key="normal" title="Start!">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="titleShadowColor" red="0.30943059919999999" green="0.96704179050000005" blue="0.7000668645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -142,7 +142,7 @@
                         <outlet property="studyLabel" destination="xm6-U0-scY" id="jgx-mj-Ne1"/>
                         <outlet property="studySlider" destination="ggn-vy-BbZ" id="Y8C-bv-cb8"/>
                         <outlet property="titleLabel" destination="J4e-Q3-Ug6" id="hPr-In-YKN"/>
-                        <segue destination="IJK-op-4DX" kind="showDetail" identifier="goToTimer" id="Jto-o6-VTZ"/>
+                        <segue destination="IJK-op-4DX" kind="presentation" identifier="goToTimer" id="Jto-o6-VTZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -152,7 +152,7 @@
         <!--Timer View Controller-->
         <scene sceneID="o0x-sq-eii">
             <objects>
-                <viewController id="IJK-op-4DX" customClass="TimerViewController" customModule="StudyBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IJK-op-4DX" customClass="TimerViewController" customModule="Sow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sPB-se-clK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,8 +164,8 @@
                                 <rect key="frame" x="20" y="0.0" width="335" height="724"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Study Time!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2v-1v-hcd" customClass="CLTypingLabel" customModule="CLTypingLabel">
-                                        <rect key="frame" x="167.66666666666666" y="0.0" width="0.0" height="301"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <rect key="frame" x="88.666666666666686" y="0.0" width="158" height="301"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -173,19 +173,19 @@
                                         <rect key="frame" x="42" y="382" width="251" height="161"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmd-dq-vPh">
-                                                <rect key="frame" x="0.3333333333333286" y="0.0" width="250.33333333333337" height="41.666666666666664"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <rect key="frame" x="43.666666666666671" y="0.0" width="163.66666666666663" height="38"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4r-ux-6dt" userLabel="MMSS" customClass="CountableLabel" customModule="CountableLabel">
-                                                <rect key="frame" x="36.666666666666671" y="66.666666666666686" width="178" height="67.666666666666686"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="57"/>
+                                                <rect key="frame" x="36.666666666666671" y="63" width="178" height="53.666666666666657"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="31"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rWH-qh-XgR">
-                                                <rect key="frame" x="0.0" y="159.33333333333337" width="251" height="1.6666666666666572"/>
+                                                <rect key="frame" x="0.0" y="141.66666666666663" width="251" height="19.333333333333343"/>
                                                 <color key="tintColor" red="0.0" green="1" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </progressView>
                                         </subviews>
@@ -202,27 +202,27 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKZ-ww-N98">
                                         <rect key="frame" x="0.0" y="624" width="335" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abh-my-PJO" userLabel="Go Back">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNU-vr-2fF" userLabel="Pause/Start">
                                                 <rect key="frame" x="117.66666666666666" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" red="0.26078873870000002" green="0.75244373080000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Cl0-cC-hOa"/>
-                                                    <constraint firstAttribute="height" constant="100" id="xco-EW-d9m"/>
+                                                    <constraint firstAttribute="height" constant="100" id="Dtr-a5-lTs"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="wNe-G4-Cfb"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
-                                                <state key="normal" title="Go Back">
-                                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="24"/>
+                                                <state key="normal" title="Pause">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="backButtonPressed:" destination="IJK-op-4DX" eventType="touchUpInside" id="CKd-dv-2qR"/>
+                                                    <action selector="pauseStartPressed:" destination="IJK-op-4DX" eventType="touchUpInside" id="h77-cc-Pg1"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="abh-my-PJO" firstAttribute="centerY" secondItem="MKZ-ww-N98" secondAttribute="centerY" id="8PP-o8-srV"/>
+                                            <constraint firstItem="lNU-vr-2fF" firstAttribute="centerX" secondItem="MKZ-ww-N98" secondAttribute="centerX" id="Y4k-Qy-UYN"/>
+                                            <constraint firstItem="lNU-vr-2fF" firstAttribute="centerY" secondItem="MKZ-ww-N98" secondAttribute="centerY" id="iML-uI-o39"/>
                                             <constraint firstAttribute="height" constant="100" id="j5B-Bi-JmY"/>
-                                            <constraint firstItem="abh-my-PJO" firstAttribute="centerX" secondItem="MKZ-ww-N98" secondAttribute="centerX" id="mJV-rN-Etn"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -241,16 +241,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ldJ-mH-MM4"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6sa-1U-SSO"/>
                     <connections>
                         <outlet property="activityLabel" destination="i2v-1v-hcd" id="YLx-n0-ZMO"/>
-                        <outlet property="buttonLabel" destination="abh-my-PJO" id="4yb-7q-wwa"/>
+                        <outlet property="pauseStartLabel" destination="lNU-vr-2fF" id="vWK-CE-gcU"/>
                         <outlet property="progressBar" destination="rWH-qh-XgR" id="d5y-8G-b5v"/>
                         <outlet property="timeLabel" destination="x4r-ux-6dt" id="D40-Ac-zuH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAD-5b-k5U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956.52173913043487" y="119.86607142857142"/>
+            <point key="canvasLocation" x="956" y="119.70443349753695"/>
         </scene>
     </scenes>
     <resources>

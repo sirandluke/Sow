@@ -1,6 +1,6 @@
 //
 //  TimerMethods.swift
-//  StudyBuddy
+//  Sow
 //
 //  Created by Luke Sirand on 9/22/20.
 //  Copyright © 2020 Luke Sirand. All rights reserved.

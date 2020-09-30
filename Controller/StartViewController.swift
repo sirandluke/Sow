@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 import CLTypingLabel
 import CountableLabel
 
@@ -17,6 +18,7 @@ class StartViewController: UIViewController {
     let debug = true
     
     var sm = StartMethods()
+    
     
     // Types "Study Buddy" on launch.
     @IBOutlet weak var titleLabel: CLTypingLabel!
@@ -36,7 +38,7 @@ class StartViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
 
     // MARK: - Methods
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = K.app_name
@@ -47,6 +49,7 @@ class StartViewController: UIViewController {
         studyLabel.text = "\(sm.getBreakTime()) min"
         breakSlider.value = Float(sm.getBreakTime())
         breakLabel.text = "\(sm.getBreakTime()) min"
+        
     }
     
     // Updates the study slider.
@@ -91,3 +94,4 @@ extension UIButton {
         self.layer.cornerRadius = self.frame.size.width / 2
     }
 }
+
