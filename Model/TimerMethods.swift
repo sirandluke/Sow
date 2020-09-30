@@ -28,7 +28,7 @@ struct TimerMethods {
         }
     }
     
-    // Formats time as 'MM:SS'.
+    /// Formats time as 'MM:SS'.
     func getTime(_ secondsPassed: Int) -> String {
         var t = c!.s
         if c!.status {
@@ -59,7 +59,7 @@ struct TimerMethods {
         return "\(mStr):\(sStr)"
     }
     
-    // Indicates switching timers.
+    /// Indicates switching timers.
     mutating func changeStatus() {
         if c!.status { c!.status = false }
         else { c!.status = true }
@@ -73,7 +73,7 @@ struct TimerMethods {
         return totalTime
     }
     
-    // Picks a random phrase to be displayed
+    /// Picks a random phrase to be displayed.
     func getPhrase() -> String {
         if c!.status {
             return K.P.b[Int.random(in: 0..<K.P.b.count)]

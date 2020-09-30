@@ -12,14 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func registerForPushNotifications(){
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge]) { (granted, error) in
             print(granted)
         }
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        registerForPushNotifications()
+        registerForPushNotifications()  /// Request access to send push notifications.
+        UIApplication.shared.isIdleTimerDisabled = true  /// Prevent phone from going idle when in use.
         return true
     }
 

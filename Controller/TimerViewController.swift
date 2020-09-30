@@ -6,11 +6,6 @@
 //  Copyright © 2020 Luke Sirand. All rights reserved.
 //
 
-// TODO: Make the ":" flash on and off like digital alarm clock
-//       Change the label to be of format MM:SS
-//       Transfer methods to TimerMethods.swift
-
-
 import UIKit
 import AVFoundation
 import UserNotifications
@@ -27,17 +22,17 @@ class TimerViewController: UIViewController {
     
     var player: AVAudioPlayer!
     
-    // Declare timer
+    /// Declare timer
     var timer = Timer()
     var totalTime = 0
     var secondsPassed = 0
     var isPaused = false
     
-    // Stores the study and break times user specified
+    /// Stores the study and break times user specified
     var studyTimer: Int?
     var breakTimer: Int?
     
-    // TODO: create action and outlets for timers and labels
+    /// TODO: create action and outlets for timers and labels
     @IBOutlet weak var activityLabel: CLTypingLabel!
     @IBOutlet weak var timeLabel: CountableLabel!
     @IBOutlet weak var pauseStartLabel: UIButton!
@@ -51,15 +46,15 @@ class TimerViewController: UIViewController {
         pauseStartLabel.titleLabel?.text = K.p
         pauseStartLabel.makeCircular()
         if debug {
-            tm.setClock(1, 1, false)
+            tm.setClock(studyTimer!, breakTimer!, isPaused)
             print("Study time: \(String(describing: studyTimer))")
             print("Break time: \(String(describing: breakTimer))")
         }
-        
+        activityLabel.text = tm.getPhrase()
         startTime()
     }
-    
-    // For when user swipes out of view.
+ 
+    /// For when user swipes out of view.
     override func viewDidDisappear(_ animated: Bool) {
         if !(isPaused) {
             timer.invalidate()
@@ -67,20 +62,19 @@ class TimerViewController: UIViewController {
     }
     
     @objc func startTime() {
-        timer.invalidate() // Reset timer.
-        
+        timer.invalidate()
         totalTime = studyTimer!
         
-        // Reset
+        /// Reset
         reset()
         
-        // timeInterval: 1.0 -> want to update every second
-        // repeats -> make it repeat
-        // selector -> calls function everysingle second (updateTimer)
+        /// timeInterval: 1.0 -> want to update every second
+        /// repeats -> make it repeat
+        /// selector -> calls function everysingle second (updateTimer)
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
-    // Update the countdown timer or switch timers.
+    /// Update the countdown timer or switch timers.
     @objc func updateTimer() {
         if secondsPassed < totalTime * 60 {
             secondsPassed += 1
@@ -91,37 +85,37 @@ class TimerViewController: UIViewController {
             }
         }
         else {
-            // Gets audio sample.
-            if (tm.c?.status)! {  // Switching from break to study
-                // TODO: Text Message Notify User
+            /// Gets audio sample.
+            if (tm.c?.status)! {  /// Switching from break to study
                 let url = Bundle.main.url(forResource: K.S.n1_2, withExtension: K.S.ext)
                 player = try! AVAudioPlayer(contentsOf: url!)
                 studyNotif()
             }
-            else { // Switching from study to break
+            else { /// Switching from study to break
                 let url = Bundle.main.url(forResource: K.S.n1_1, withExtension: K.S.ext)
                 player = try! AVAudioPlayer(contentsOf: url!)
                 breakNotif()
             }
-            player!.play()
+            self.player!.play()
             reset()
             rUI()
         }
     }
     
-    // Reset timer.
+    /// Reset timer.
     func reset() {
         progressBar.progress = 1.0
         secondsPassed = 0
         totalTime = tm.reset()
     }
     
-    // Updates UI
+    /// Updates UI
     func rUI() {
         tm.changeStatus()
         activityLabel.text = tm.getPhrase()
     }
-   
+        
+        /// Toggle pause/start
     @IBAction func pauseStartPressed(_ sender: UIButton) {
         if debug {
             print("Button Pressed")
@@ -137,5 +131,4 @@ class TimerViewController: UIViewController {
             pauseStartLabel.titleLabel?.text = K.s
         }
     }
-    
 }

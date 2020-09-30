@@ -17,7 +17,7 @@ extension UIViewController {
         content.title = K.N.sH
         content.body = K.N.sB
         content.badge = 1
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         let request = UNNotificationRequest(identifier: "studyNotif", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler:  nil)
     }
@@ -27,7 +27,7 @@ extension UIViewController {
         content.title = K.N.bH
         content.body = K.N.bB
         content.badge = 1
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         let request = UNNotificationRequest(identifier: "breakNotif", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler:  nil)
     }

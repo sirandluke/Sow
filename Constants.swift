@@ -17,10 +17,9 @@ struct K {
             "Study Time 📖",
             "Time 2 Work 🤓",
             "Go! Go! Go! ✏️",
-            "🖋️",
             "Ssshhh It's Study Time 💭",
-            "1,000 IQ ONLY 🧠",
-            "PHONES DOWN. BOOKS UP. 📚"
+            "Thinking Time🧠",
+            "Let's Get to Work! 📚"
         ]
         
         static let b = [

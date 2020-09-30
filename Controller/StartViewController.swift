@@ -7,30 +7,33 @@
 //
 
 import UIKit
+import AVFoundation
 import UserNotifications
 import CLTypingLabel
 import CountableLabel
+import ViewAnimator
+
 
 class StartViewController: UIViewController {
 
-    // MARK: - Declerations
+    /// MARK: - Declerations
 
     let debug = true
     
     var sm = StartMethods()
     
     
-    // Types "Study Buddy" on launch.
-    @IBOutlet weak var titleLabel: CLTypingLabel!
+    /// Types "Study Buddy" on launch.
+    @IBOutlet weak var titleLabel: CountableLabel!
     
-    // Changes Label to reflect slider movement.
+    /// Changes Label to reflect slider movement.
     @IBOutlet weak var studyLabel: CountableLabel!
     @IBOutlet weak var sLeft: CountableLabel!
     @IBOutlet weak var breakLabel: CountableLabel!
     @IBOutlet weak var bLeft: CountableLabel!
     
     
-    // Access slider bar fields.
+    /// Access slider bar fields.
     @IBOutlet weak var studySlider: UISlider!
     @IBOutlet weak var breakSlider: UISlider!
     
@@ -38,6 +41,8 @@ class StartViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
 
     // MARK: - Methods
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +54,6 @@ class StartViewController: UIViewController {
         studyLabel.text = "\(sm.getBreakTime()) min"
         breakSlider.value = Float(sm.getBreakTime())
         breakLabel.text = "\(sm.getBreakTime()) min"
-        
     }
     
     // Updates the study slider.

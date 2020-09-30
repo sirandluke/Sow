@@ -17,12 +17,12 @@ struct StartMethods {
         session = Session(sTime: s, bTime: b)
     }
     
-    // Returns the time user selected or default time of 30 minutes
+    /// Returns the time user selected or default time of 30 minutes.
     func getStudyTime() -> Int {
         return session?.sTime ?? 30
     }
     
-    // Returns the time user selected or default time of 10 minutes
+    /// Returns the time user selected or default time of 10 minutes.
     func getBreakTime() -> Int {
         return session?.bTime ?? 10
     }

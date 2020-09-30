@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="5di-eX-8x3" secondAttribute="bottom" id="OOl-3d-jpP"/>
                             <constraint firstItem="5di-eX-8x3" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="TPj-sJ-BDb"/>
