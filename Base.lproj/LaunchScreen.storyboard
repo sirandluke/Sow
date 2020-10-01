@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,26 +15,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="srd_apps" translatesAutoresizingMaskIntoConstraints="NO" id="5di-eX-8x3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lAh-V6-Ytu">
+                                <rect key="frame" x="57" y="269" width="300" height="358.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sow_bakcground_1" translatesAutoresizingMaskIntoConstraints="NO" id="5di-eX-8x3">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="eLy-Ac-YTc"/>
+                                            <constraint firstAttribute="width" constant="300" id="pZk-BP-Ifd"/>
+                                        </constraints>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="srd apps..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjt-BR-s6T">
+                                        <rect key="frame" x="23" y="300" width="254.5" height="58.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="45"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="5di-eX-8x3" secondAttribute="bottom" id="OOl-3d-jpP"/>
-                            <constraint firstItem="5di-eX-8x3" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="TPj-sJ-BDb"/>
-                            <constraint firstItem="5di-eX-8x3" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Yut-AG-2rB"/>
-                            <constraint firstItem="5di-eX-8x3" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="rhc-S5-2mU"/>
+                            <constraint firstItem="lAh-V6-Ytu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="A6p-wH-wQI"/>
+                            <constraint firstItem="lAh-V6-Ytu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="UbI-0G-Xeq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+            <point key="canvasLocation" x="50.724637681159422" y="374.33035714285711"/>
         </scene>
     </scenes>
     <resources>
-        <image name="srd_apps" width="750" height="1334"/>
+        <image name="sow_bakcground_1" width="515" height="516"/>
     </resources>
 </document>

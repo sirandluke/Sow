@@ -15,8 +15,8 @@ import CountableLabel
 class TimerViewController: UIViewController {
 
     //MARK: - Declerations
-    let debug = true
     
+    let debug = false
     
     var tm = TimerMethods()
     
@@ -32,9 +32,9 @@ class TimerViewController: UIViewController {
     var studyTimer: Int?
     var breakTimer: Int?
     
-    /// TODO: create action and outlets for timers and labels
     @IBOutlet weak var activityLabel: CLTypingLabel!
     @IBOutlet weak var timeLabel: CountableLabel!
+    
     @IBOutlet weak var pauseStartLabel: UIButton!
     
     @IBOutlet weak var progressBar: UIProgressView!
@@ -42,16 +42,19 @@ class TimerViewController: UIViewController {
    //MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideCountableLabel(timeLabel)
+        timeLabel.animationType = .pushDown
         
         pauseStartLabel.titleLabel?.text = K.p
         pauseStartLabel.makeCircular()
         if debug {
-            //tm.setClock(studyTimer!, breakTimer!, isPaused)
             tm.setClock(1, 1, isPaused)
 
             print("Study time: \(String(describing: studyTimer))")
             print("Break time: \(String(describing: breakTimer))")
         }
+        else { tm.setClock(studyTimer!, breakTimer!, isPaused) }
+
         activityLabel.text = tm.getPhrase()
         startTime()
     }
@@ -117,20 +120,17 @@ class TimerViewController: UIViewController {
         activityLabel.text = tm.getPhrase()
     }
         
-        /// Toggle pause/start
+    /// Toggle pause/start
     @IBAction func pauseStartPressed(_ sender: UIButton) {
-        if debug {
-            print("Button Pressed")
-        }
         if isPaused {
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
             isPaused = false
-            pauseStartLabel.titleLabel?.text = K.p
+            pauseStartLabel.setTitle(K.p, for: .normal)
         }
         else {
             timer.invalidate()
             isPaused = true
-            pauseStartLabel.titleLabel?.text = K.s
+            pauseStartLabel.setTitle(K.s, for: .normal)
         }
     }
 }

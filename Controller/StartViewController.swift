@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AVFoundation
+//import AVFoundation
 import UserNotifications
 import CLTypingLabel
 import CountableLabel
@@ -20,17 +20,17 @@ class StartViewController: UIViewController {
 
     let debug = true
     
-    var player: AVAudioPlayer!
+    //var player: AVAudioPlayer!
 
     var sm = StartMethods()
     
-    @IBOutlet weak var titleLabel: CLTypingLabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     /// Changes Label to reflect slider movement.
-    @IBOutlet weak var studyLabel: CountableLabel!
-    @IBOutlet weak var sLeft: CountableLabel!
-    @IBOutlet weak var breakLabel: CountableLabel!
-    @IBOutlet weak var bLeft: CountableLabel!
+    @IBOutlet weak var studyLabel: UILabel!
+    @IBOutlet weak var sLeft: UILabel!
+    @IBOutlet weak var breakLabel: UILabel!
+    @IBOutlet weak var bLeft: UILabel!
     
     
     /// Access slider bar fields.
@@ -47,18 +47,22 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = K.app_name
+        
         startButton.makeCircular()
+        
         sLeft.text = "Study Time"
         bLeft.text = "Break Time"
+        
         studySlider.value = Float(sm.getStudyTime())
         studyLabel.text = "\(sm.getBreakTime()) min"
+        
         breakSlider.value = Float(sm.getBreakTime())
         breakLabel.text = "\(sm.getBreakTime()) min"
         
         /// Play App Launch Sound
-        let url = Bundle.main.url(forResource: K.S.s, withExtension: K.S.ext)
-        player = try! AVAudioPlayer(contentsOf: url!)
-        player.play()
+        //let url = Bundle.main.url(forResource: K.S.n2_1, withExtension: K.S.ext)
+        //player = try! AVAudioPlayer(contentsOf: url!)
+        //player.play()
     }
     
     /// Updates the study slider.
