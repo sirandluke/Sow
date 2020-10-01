@@ -24,7 +24,10 @@ class StartViewController: UIViewController {
 
     var sm = StartMethods()
     
+    var theme: (UIColor, UIColor)?
+    
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet var background: UIView!
     
     /// Changes Label to reflect slider movement.
     @IBOutlet weak var studyLabel: UILabel!
@@ -42,8 +45,6 @@ class StartViewController: UIViewController {
 
     // MARK: - Methods
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = K.app_name
@@ -52,6 +53,8 @@ class StartViewController: UIViewController {
         
         sLeft.text = "Study Time"
         bLeft.text = "Break Time"
+    
+        setTheme()
         
         studySlider.value = Float(sm.getStudyTime())
         studyLabel.text = "\(sm.getBreakTime()) min"
@@ -63,6 +66,10 @@ class StartViewController: UIViewController {
         //let url = Bundle.main.url(forResource: K.S.n2_1, withExtension: K.S.ext)
         //player = try! AVAudioPlayer(contentsOf: url!)
         //player.play()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setTheme()
     }
     
     /// Updates the study slider.
@@ -78,13 +85,27 @@ class StartViewController: UIViewController {
         breakLabel.text = "\(time) min"
     }
     
-    /// Gets values for timers and performs Segue
+    /// Gets values for timers and performs Segue.
     @IBAction func startPressed(_ sender: UIButton) {
         let studyTime = Int(studySlider.value)
         let breakTime = Int(breakSlider.value)
         sm.setSession(s: studyTime, b: breakTime)
         
         self.performSegue(withIdentifier: "goToTimer", sender: self)
+    }
+    
+    /// Sets corresponding element colors.
+    func setTheme() {
+        if theme == nil || theme! != getStartColors() {
+            theme = getStartColors()
+            background.backgroundColor = theme!.0
+            titleLabel.textColor = theme!.1
+            studyLabel.textColor = theme!.1
+            sLeft.textColor = theme!.1
+            breakLabel.textColor = theme!.1
+            bLeft.textColor = theme!.1
+            startButton.setTitleColor(theme!.1, for: .normal)
+        }
     }
     
     //MARK: - Segue Sequence

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait" appearance="dark"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -149,6 +149,7 @@
                     </view>
                     <connections>
                         <outlet property="bLeft" destination="yBc-lU-RwS" id="NFP-Ti-8bH"/>
+                        <outlet property="background" destination="8bC-Xf-vdC" id="qyG-lu-7js"/>
                         <outlet property="breakLabel" destination="N6J-2x-Eyi" id="SC1-zE-2Ms"/>
                         <outlet property="breakSlider" destination="pyq-Cz-Yq6" id="4KW-Ch-oF5"/>
                         <outlet property="sLeft" destination="7YR-xl-Uaa" id="Tth-zZ-iko"/>
@@ -255,6 +256,7 @@
                     <navigationItem key="navigationItem" id="6sa-1U-SSO"/>
                     <connections>
                         <outlet property="activityLabel" destination="i2v-1v-hcd" id="YLx-n0-ZMO"/>
+                        <outlet property="background" destination="sPB-se-clK" id="6VI-EP-ccL"/>
                         <outlet property="pauseStartLabel" destination="lNU-vr-2fF" id="vWK-CE-gcU"/>
                         <outlet property="progressBar" destination="rWH-qh-XgR" id="d5y-8G-b5v"/>
                         <outlet property="timeLabel" destination="x4r-ux-6dt" id="D40-Ac-zuH"/>

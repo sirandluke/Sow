@@ -22,6 +22,9 @@ class TimerViewController: UIViewController {
     
     var player: AVAudioPlayer!
     
+    var theme: (UIColor, UIColor)?
+    
+    
     /// Declare timer
     var timer = Timer()
     var totalTime = 0
@@ -32,6 +35,7 @@ class TimerViewController: UIViewController {
     var studyTimer: Int?
     var breakTimer: Int?
     
+    @IBOutlet var background: UIView!
     @IBOutlet weak var activityLabel: CLTypingLabel!
     @IBOutlet weak var timeLabel: CountableLabel!
     
@@ -42,11 +46,13 @@ class TimerViewController: UIViewController {
    //MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        overrideCountableLabel(timeLabel)
         timeLabel.animationType = .pushDown
+        
+        setTheme()
         
         pauseStartLabel.titleLabel?.text = K.p
         pauseStartLabel.makeCircular()
+        
         if debug {
             tm.setClock(1, 1, isPaused)
 
@@ -131,6 +137,16 @@ class TimerViewController: UIViewController {
             timer.invalidate()
             isPaused = true
             pauseStartLabel.setTitle(K.s, for: .normal)
+        }
+    }
+    
+    func setTheme() {
+        if theme == nil || theme! != getStartColors() {
+            theme = getTimerColors()
+            background.backgroundColor = theme!.0
+            activityLabel.textColor = theme!.1
+            timeLabel.textColor = theme!.1
+            pauseStartLabel.setTitleColor(theme!.1, for: .normal)
         }
     }
 }
