@@ -2,4 +2,4 @@
 # Sow!
 # Authors
   Developed by Luke Sirand <br>
-  Logo and Backgrounds by Cole Grodnitzky
+  Logos and backgrounds by Cole Grodnitzky
