@@ -1,4 +1,4 @@
-# <img src = "Assets.xcassets/AppIcon.appiconset/1024.png" width = 50 height = 50>
+# <img src = "Assets.xcassets/AppIcon.appiconset/1024.png" width = 150 height = 150>
 # Sow!
 # Authors
   Developed by Luke Sirand
