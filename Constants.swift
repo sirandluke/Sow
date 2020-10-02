@@ -37,8 +37,6 @@ struct K {
         static let s = "start_sound"
         static let n1_1 = "notification_1.1"
         static let n1_2 = "notification_1.2"
-        static let n2_1 = "notification_2.1"
-        static let n2_2 = "notification_2.2"
         static let ext = "mp3"
     }
     
