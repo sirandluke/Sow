@@ -13,10 +13,10 @@ For many of us, the work/learn from home environment has been a challenge in ter
 
 ## Images
 <p align = "float">
-  <img src = "Images/sow_sc_2.png" height = 500>
-  <img src = "Images/sow_sc_3.png" height = 500>
-  <img src = "Images/sow_sc_5.png" height = 500>
-  <img src = "Images/sow_sc_4.png" height = 500> 
+  <img src = "Images/sow_sc_2.png" width = 250 height = 500>
+  <img src = "Images/sow_sc_3.png" width = 250 height = 500>
+  <img src = "Images/sow_sc_5.png" width = 250 height = 500>
+  <img src = "Images/sow_sc_4.png" width = 250 height = 500> 
 </p>
 
 ## Next Steps
