@@ -21,6 +21,7 @@ For many of us, the work/learn from home environment has been a challenge in ter
   <img src = "Images/sow_sc_5.png" height = 500>
   <img src = "Images/sow_sc_4.png" height = 500>
 </p>
+
 ## Next Steps
 Saving up money to enroll into the Apple Developer Program and meet all the requirements to join.
 
