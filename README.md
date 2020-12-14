@@ -1,5 +1,5 @@
 <p align="center"> 
-  <img src = "Assets.xcassets/AppIcon.appiconset/1024.png" width = 300 height = 300>
+  <img src = "Sow/Images/sow_bakcground_1.png" width = 300 height = 300>
 </p> 
 
 # Sow!
