@@ -1,5 +1,5 @@
 <p align="center"> 
-  <img src = "Sow/Images/sow_bakcground_1.png" width = 300 height = 300>
+  <img src = "Images/sow_bakcground_1.png" width = 300 height = 300>
 </p> 
 
 # Sow!
