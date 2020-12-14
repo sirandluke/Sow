@@ -26,4 +26,4 @@ For many of us, the work/learn from home environment has been a challenge in ter
 Saving up money to enroll into the Apple Developer Program and meet all the requirements to join.
 
 ## Contact
-For all inquiries, contact me by email: lsirand@ucsd.edu
+Reach out on twitter! -> @sirandlj
